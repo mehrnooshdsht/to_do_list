@@ -176,7 +176,7 @@
     <h2>my todoList</h2>
 
     <div class="container">
-        <form action="" method="post">
+        <form action="{% url 'open2' my_id %}" method="post">
 {#            {% url ''%}#}
             {% csrf_token %}
             <div class="input">

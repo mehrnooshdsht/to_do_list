@@ -5,3 +5,4 @@ class Add_new_list_form(forms.Form):
 class Add_new_task_form(forms.Form):
     Task_Name = forms.CharField(max_length=30)
 
+
