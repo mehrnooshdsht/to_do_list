@@ -173,8 +173,11 @@
 <div class="top-head">
     <h1>My Awesome Task Manager</h1>
 </div>
-    <h2>my todoList</h2>
-
+ {% for list in this_list%}
+    <h2>
+    {{ list.Name }}
+    </h2>
+ {% endfor %}
     <div class="container">
         <form action="{% url 'open2' 0 2 my_id%}" method="post">
             {% csrf_token %}

@@ -177,22 +177,13 @@
 <h2>Done Tasks</h2>
 
 <div class="container">
-    {% for done_tasks in done_tasklists%}
+    {% for done_tasks in done_task_lists%}
          <li>
                 <p class="DoneTask">
                     {{ done_tasks.Name }}
                 </p>
             </li>
     {% endfor %}
-{#         <li>#}
-{#                <p class="DoneTask">{{ second_done }}</p>#}
-{#            </li>#}
-{#         <li>#}
-{#                <p class="DoneTask">{{ third_done }}</p>#}
-{#            </li>#}
-{#         <li>#}
-{#                <p class="DoneTask">{{ forth_done }}</p>#}
-{#            </li>#}
     </div>
 
 

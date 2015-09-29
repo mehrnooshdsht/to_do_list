@@ -174,11 +174,10 @@
     <h1>My Awesome Task Manager</h1>
 
 </div>
-{#<h2>Done Tasks</h2>#}
 <h2> Lists </h2>
 <div class="container">
 
-    {% for element in tasklists%}
+    {% for element in task_lists%}
         <p id="DoneTasks">
             <a href="{% url 'open2' 0 2 element.id %}">
                 {{ element.Name }}
@@ -193,7 +192,6 @@
 <form action='{% url 'open1' %}' method="POST">
     {% csrf_token %}
         <div class="input">
-{#            <input id="Name" name="title" type="text">#}
             {{ form1 }}
             <input type="submit" value="Add">
         </div>
