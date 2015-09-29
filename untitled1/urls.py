@@ -15,20 +15,10 @@
 # """
 
 from django.conf.urls import url
-
 from untitled1 import views
 
 urlpatterns = [
-    # url(r'^index/[0-2]/$', views.add_list, name="add_list"),
-    # modify la8ter in one url one def
-    url(r'^index3/(?P<my_id>\d+)/$', views.open2, name="open2"),
-    # url(r'^index3$', views.open2, name="open2"),
-    # url(r'open2$', views.open2, name="open2"),7
+    url(r'^index3/(?P<this_task_id>\d+)/(?P<done>\d+)/(?P<my_id>\d+)/$', views.open2, name="open2"),
     url(r'index2$', views.open1, name="open1"),
-    # url(r'index3$', views.add_task, name="add_task"),
     url(r'^index$', views.open3, name="open3"),
-    # url(r'^add/(?P<id>\d+)/$', views.add, name="add"),
-    # url(r'^delete/(?P<id>\d+)/$', views.delete, name="delete"),
-    # url(r'^done_remove_task$', views.done_remove_task, name="done_remove_task"),
-    # url(r'^show_task/(?P<id>\d+)/$', views.show_task, name="show_task"),
 ]

@@ -176,8 +176,7 @@
     <h2>my todoList</h2>
 
     <div class="container">
-        <form action="{% url 'open2' my_id %}" method="post">
-{#            {% url ''%}#}
+        <form action="{% url 'open2' 0 2 my_id%}" method="post">
             {% csrf_token %}
             <div class="input">
                 {{ form2 }}
@@ -187,27 +186,14 @@
             <!-- To Do List Item -->
             <ul>
                 {% for tasks in tasks_in_list %}
-{#                    for range must be correct and dynamic#}
                     <li>
                         <label for="item-1">
                             {{ tasks.Name }}
                         </label>
-    {#                    i need a for here#}
-
-{#                        <a class="delete" href="{% url 'delete' %}">&#10008;</a>#}
-{#                        <a class="done" href="{% url add %}">&#10004;</a>#}
+                        <a class="delete" name="delete1" href={% url 'open2' tasks.id 0 my_id%}>&#10008;</a>
+                        <a class="done" name="done1" href={% url 'open2' tasks.id 1 my_id%}>&#10004;</a>
                     </li>
                 {% endfor %}
-{#                      <li>#}
-{#                        <label for="item-1">{{ second_task }}</label>#}
-{#                        <a class="delete" href="">&#10008;</a>#}
-{#                        <a class="done" href="">&#10004;</a>#}
-{#                    </li>#}
-{#                      <li>#}
-{#                        <label for="item-1">{{ third_task }}</label>#}
-{#                        <a class="delete" href="">&#10008;</a>#}
-{#                        <a class="done" href="">&#10004;</a>#}
-{#                    </li>#}
             </ul>
     </div>
 

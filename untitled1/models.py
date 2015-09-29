@@ -10,9 +10,7 @@ class List1(models.Model):
 #         fields = '__all__'
 
 class List2(models.Model):
-    # list_name = models.ForeignKey(List1)
     list_name = models.CharField(max_length=30)
-    # list_name = models.CharField(widget=models.HiddenInput())
     Name = models.CharField(max_length=30)
 
 # new task

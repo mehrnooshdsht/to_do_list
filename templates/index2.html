@@ -180,7 +180,7 @@
 
     {% for element in tasklists%}
         <p id="DoneTasks">
-            <a href="{% url 'open2' element.id %}">
+            <a href="{% url 'open2' 0 2 element.id %}">
                 {{ element.Name }}
             </a>
         </p>

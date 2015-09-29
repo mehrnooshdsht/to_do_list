@@ -20,7 +20,8 @@ def open1(request):
 
     return render(request, 'index2.html', {'form1': form1}, context)
 
-def open2(request,my_id):
+
+def open2(request, this_task_id, done, my_id):
     list_all2 = List2.objects.all().filter(list_name=my_id)
     #
     context = RequestContext(request, {
@@ -30,10 +31,17 @@ def open2(request,my_id):
         form2 = Add_new_task_form(request.POST)
         if form2.is_valid():
             task_name = form2.cleaned_data['Task_Name']
-            tasks = List2.objects.create(Name=task_name,list_name=my_id)
+            tasks = List2.objects.create(Name=task_name, list_name=my_id)
     else:
         form2 = Add_new_task_form()
-    return render(request, 'index3.html', {'form2': form2, 'my_id':my_id}, context)
+        if done == "0":
+            List2.objects.filter(id=this_task_id).delete()
+        elif done == "1":
+            new_task_add=List2.objects.get(id=this_task_id)
+            done_task = List3.objects.create(Name=new_task_add.Name)
+            List2.objects.filter(id=this_task_id).delete()
+    return render(request, 'index3.html', {'form2': form2,'this_task_id' :this_task_id ,'done':done, 'my_id': my_id }, context)
+# 'this_task_name': None
 
 
 def open3(request):
